@@ -3,8 +3,10 @@
 *.rock
 test.lua
 *.log
+hc3emu.json
 *.out
 test/
 tmp/
+emu/
 
 

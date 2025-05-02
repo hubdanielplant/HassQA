@@ -9,7 +9,7 @@ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
 Everyone is permitted to copy and distribute verbatim copies
 of this license document, but changing it is not allowed.
 --]]
-_DEVELOP = "../../fibemu"
+_DEVELOP = "../../hc3emu"
 if require and not QuickApp then require("hc3emu") end
 
 ---@diagnostic disable: undefined-field
@@ -19,8 +19,8 @@ if require and not QuickApp then require("hc3emu") end
 --%%save=HASS.fqa
 --%%state=state.db
 --%%proxy=HASSProxy3
---%%var=url:config.HASS.url
---%%var=token:config.HASS.token
+--%%var=url:config.HASSurl
+--%%var=token:config.HASStoken
 --%%var=auto:"true"
 --%%var=debug:"main,wsc,child,color,battery,speaker,send,late"
 --%%conceal=token:<put you HASS api token here>
