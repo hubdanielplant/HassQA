@@ -19,8 +19,10 @@ if require and not QuickApp then require("hc3emu") end
 --%%save=HASS.fqa
 --%%state=state.db
 --%%proxy=HASSProxy3
---%%var=url:config.HASSurl
---%%var=token:config.HASStoken
+--%%offline=true
+--%%webui=true
+--%%var=url:config.HASS_url
+--%%var=token:config.HASS_token
 --%%var=auto:"true"
 --%%var=debug:"main,wsc,child,color,battery,speaker,send,late"
 --%%conceal=token:<put you HASS api token here>

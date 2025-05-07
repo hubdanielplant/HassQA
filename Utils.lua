@@ -68,19 +68,18 @@ function WSConnection:__init(url,token)
   self.url = fmt("ws://%s/api/websocket",url)
 end
 
+local mid,mcbs = 99,{}
+
 local pinger = nil
 function WSConnection:ping()
   if pinger then
-    clearTimeout(pinger)
-    pinger = nil
+    pinger = clearTimeout(pinger)
   end
   pinger = setTimeout(function() 
-    --print("PING") 
     self:send({type="ping"},function() self:ping() end)
   end,15*1000)
 end
 
-local mid,mcbs = 99,{}
 function WSConnection:sendRaw(data)
   self.sock:send(json.encode(data))
   self:ping()
