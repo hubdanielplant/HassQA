@@ -858,8 +858,9 @@ function Thermostat:update(entity)
   local hvacAction = tostring(a.hvac_action or 'idle')
   local unit = 'C'
   
-  self:debugf("Updating UI - currentTemp: %.1f, targetTemp: %s, hvacAction: %s", 
-    currentTemp, targetTemp and string.format("%.1f", targetTemp) or "nil", hvacAction)
+  local name = self.name:match("(.-)%s*%(HASS%)$") or self.name
+  DEBUGF('thermostat',"Thermostat:'%s' Updating UI - currentTemp: %.1f, targetTemp: %s, hvacAction: %s", 
+    name, currentTemp, targetTemp and string.format("%.1f", targetTemp) or "nil", hvacAction)
   
   -- Update UI with a small delay to ensure UI elements are ready (especially during init)
   local function updateUI()
