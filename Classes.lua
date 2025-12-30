@@ -889,8 +889,8 @@ function Thermostat:update(entity)
     end
   end
   
-  -- Delay UI update slightly to ensure elements are ready
-  setTimeout(updateUI, 100)
+  -- Delay UI update to ensure elements are ready (needs more time when debugging is off)
+  setTimeout(updateUI, 500)
   
   -- Update logTemp property to show current temperature (Fibaro standard property)
   self:updateProperty('logTemp', string.format('%.1f°C', currentTemp))
