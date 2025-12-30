@@ -46,7 +46,7 @@ if require and not QuickApp then require("hc3emu") end
 
 --%% debug=refresh:false
 
-local VERSION = "0.75"
+local VERSION = "0.76"
 local fmt = string.format
 local token,URL
 local dfltDebugFlags = "child"
