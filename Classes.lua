@@ -827,7 +827,7 @@ function Thermostat:logState(entity)
   pr.printf("  hvac modes %s\n",json.encode(a.hvac_modes or {}))
   pr.printf("  preset mode %s\n",a.preset_mode or 0)
   pr.printf("  preset modes %s\n",json.encode(a.preset_modes or {}))
-  self:debugf(pr.tostring())
+  self:debugf("%s",pr.tostring())
 end
 function Thermostat:update(entity)
   self.mainId = entity
