@@ -368,7 +368,8 @@ function HASSChild:debugf(fmt,...)
 end
 
 function HASSChild:update_sensor_battery(entity)
-  self:debugf("battery:%s%%",entity.state)
+  local name = self.name:match("(.-)%s*%(HASS%)$") or self.name
+  DEBUGF('battery',"'%s' battery:%s%%",name,entity.state)
   self:updateProperty('batteryLevel',round(entity.state))
 end
 
@@ -795,7 +796,8 @@ function Cover:setValue(value) -- Value is type of integer (0-99)
 end
 function Cover:logState(entity)
   local a = entity.attributes
-  self:debugf("%s %s%%",entity.state,a.current_position or 0)
+  local name = self.name:match("(.-)%s*%(HASS%)$") or self.name
+  DEBUGF('cover',"'%s' %s %s%%",name,entity.state,a.current_position or 0)
 end
 function Cover:update(entity)
   self.mainId = entity
